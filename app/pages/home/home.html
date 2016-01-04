@@ -1,0 +1,26 @@
+<ion-navbar *navbar>
+    <ion-title>
+        Home
+    </ion-title>
+    <button clear (click)="refresh()">Refresh</button>
+
+</ion-navbar>
+
+<ion-content class="home">
+   <ion-list>
+        <ion-input>
+          <input [(ngModel)]="firstName" type="text" placeholder="First Name">
+        </ion-input>
+        <ion-input>
+          <input [(ngModel)]="lastName" type="text" placeholder="Last Name">
+        </ion-input>
+      </ion-list>
+      <div padding>
+        <button block (click)="add()">Create Account</button>
+      </div>
+    <ion-list>
+        <ion-item *ngFor="#person of people">
+            {{person.firstname}} {{person.lastname}}
+        </ion-item>
+    </ion-list>
+</ion-content>
